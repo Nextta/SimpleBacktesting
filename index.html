@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="SemanticUI/semantic.min.css">
+  <title>Simple BackTest</title>
+</head>
+
+<body>
+  <div class="ui container">
+    <br>
+    <div class="ui piled segment">
+
+      <div class="ui placeholder segment">
+        <div class="ui two column stackable center aligned grid">
+          <div class="ui vertical divider"></div>
+          <div class="middle aligned row">
+            <div class="column container">
+              <div class="ui icon header">
+                <i class="database icon"></i>
+                BackTest Data
+              </div>
+              <div class="field">
+                <p><label class="ui basic label"><b>Capital:</b> <label id="capital">1000000</label>$</label></p>
+                <p><label class="ui basic label"><b>Risk:</b> 1%</label></p>
+                <p><label class="ui basic label"><b>Ganadas:</b><label id="winsTotal"> 0</label></label></p>
+                <p><label class="ui basic label"><b>Perdidas:</b><label id="lossTotal"> 0</label></label></p>
+                <p><label class="ui basic label"><b>Operaciones totales:</b><label id="opTotal"> 0</label></label></p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui icon header">
+                <i class="chart pie icon"></i>
+                BackTest Config
+              </div>
+              <p><label class="ui basic label"><b>Activo:</b></label> <input type="text" class="ui input" id="actData"
+                  placeholder="EJ: EURUSD"> </p>
+              <p><label class="ui basic label"><b>RR:</b></label> <input type="number" class="ui input" id="rrData"
+                  min="1" value="1"> </p>
+              <p>
+                <label class="ui basic label"><b>Buy/Sell:</b></label>
+                <select class="ui input" id="bs" name="bs">
+                  <option value="Buy">Buy</option>
+                  <option value="Sell">Sell</option>
+                </select>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui buttons">
+        <button class="ui positive button" id="win">Ganada</button>
+        <div class="or"></div>
+        <button class="ui negative button" id="loss">Perdida</button>
+      </div>
+    </div>
+
+    <button class="ui primary button" id="save"><i class="save outline icon"></i>Guardar</button>
+    <table class="ui green table">
+      <thead>
+        <tr>
+          <th>Activo</th>
+          <th>RR</th>
+          <th>Buy/Sell</th>
+          <th>Resultado</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody id="tableData">
+      </tbody>
+    </table>
+  </div>
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="SemanticUI/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
